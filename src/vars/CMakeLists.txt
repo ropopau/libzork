@@ -1,0 +1,1 @@
+target_sources(libzork PRIVATE action_impl.cc action.cc condition_impl.cc condition.cc)

@@ -1,0 +1,1 @@
+target_sources(libzork PRIVATE store_impl.cc store.cc)

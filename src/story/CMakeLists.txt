@@ -1,0 +1,1 @@
+target_sources(libzork PRIVATE node_impl.cc node.cc story_impl.cc story.cc)

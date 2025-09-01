@@ -1,4 +1,3 @@
-
 cmake_minimum_required(VERSION 3.21.2)
 project(libzork VERSION 1.0.0 LANGUAGES CXX)
 
@@ -8,7 +7,7 @@ project(libzork VERSION 1.0.0 LANGUAGES CXX)
 set(CMAKE_SHARED_LIBRARY_SUFFIX ".so")
 
 
-add_compile_options(-Wall -Wextra -fsanitize=address -g -O0 -std=c++20 -gdwarf-4)
+add_compile_options(-Wall -Wextra -fsanitize=address -g -O0 -std=c++20)
 #add_compile_options(-Wall -Wextra -pedantic -std=c++20 -Wold-style-cast)
 add_link_options(-fsanitize=address)
 

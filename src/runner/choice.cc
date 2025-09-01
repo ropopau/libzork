@@ -3,6 +3,10 @@
 #include "exceptions.hh"
 #include "runner/choice_impl.hh"
 
+
+/* 
+* Choice runner factory method
+*/
 namespace libzork::runner
 {
     std::unique_ptr<ChoiceRunner>

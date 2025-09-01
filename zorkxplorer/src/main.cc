@@ -1,7 +1,6 @@
 #include <iostream>
 #include <libzork/exceptions.hh>
 #include <libzork/runner/choice.hh>
-#include <libzork/runner/html.hh>
 #include <libzork/runner/smart.hh>
 
 #include "options.hh"
@@ -21,9 +20,6 @@ get_runner(const Config& config, std::unique_ptr<libzork::story::Story> story)
     case StoryType::Smart:
         return libzork::runner::make_smart_runner(std::move(story),
                                                   config.story_arg);
-    case StoryType::HTML:
-        return libzork::runner::make_html_runner(std::move(story),
-                                                 config.story_arg);
     default:
         return nullptr;
     }

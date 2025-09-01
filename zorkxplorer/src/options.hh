@@ -9,7 +9,6 @@ enum class StoryType
 {
     Choice,
     Smart,
-    HTML,
 };
 
 struct Config

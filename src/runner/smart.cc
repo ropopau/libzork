@@ -4,6 +4,9 @@
 #include "exceptions.hh"
 #include "runner/smart_impl.hh"
 
+/* 
+* smart runner factory method
+*/
 namespace libzork::runner
 {
 

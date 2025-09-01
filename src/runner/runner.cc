@@ -2,6 +2,9 @@
 
 #include "exceptions.hh"
 
+/*
+ * Abstract runner factory method
+*/
 namespace libzork::runner
 {
 

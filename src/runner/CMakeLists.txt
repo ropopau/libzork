@@ -1,1 +1,1 @@
-target_sources(libzork PRIVATE choice_impl.cc choice.cc html_impl.cc html.cc interactive.cc runner.cc smart_impl.cc smart.cc)
+target_sources(libzork PRIVATE choice_impl.cc choice.cc interactive.cc runner.cc smart_impl.cc smart.cc)

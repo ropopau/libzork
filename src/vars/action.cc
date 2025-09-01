@@ -6,6 +6,14 @@
 
 namespace libzork::vars
 {
+    /*
+    *
+    * @brief "Convert" a string into an operation
+    *
+    * @param str (const std::string&) String representing an operator
+    *
+    * @returns std::function<int(int, int)> function
+    */
     std::function<int(int, int)> get_oper(const std::string& str)
     {
         if (str.compare("add") == 0)
@@ -16,7 +24,8 @@ namespace libzork::vars
             return libzork::vars::assign;
         return nullptr;
     }
-
+    
+    // Action class factory method
     std::unique_ptr<Action> make_action(store::Store& store,
                                         const std::string& variable,
                                         const std::string& action, int value)

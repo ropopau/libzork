@@ -8,14 +8,13 @@ namespace
     constexpr option options[] = {
         { "story", required_argument, nullptr, 's' },
         { "smart", required_argument, nullptr, 'm' },
-        { "html", required_argument, nullptr, 'h' },
     };
 
     std::string usage(const std::string& name)
     {
         return "usage: " + name
             + " (--story <story.yml>)"
-              " [--smart <synonyms.yml> | --html <directory/>]";
+              " [--smart <synonyms.yml> >]";
     };
 } // namespace
 
@@ -23,7 +22,7 @@ Config parse_options(int argc, char** argv)
 {
     Config config;
     int opt;
-    while ((opt = getopt_long(argc, argv, "s:m:h:t:u:o:n:r:", options, nullptr))
+    while ((opt = getopt_long(argc, argv, "s:m:t:u:o:n:r:", options, nullptr))
            != -1)
     {
         switch (opt)
@@ -32,17 +31,7 @@ Config parse_options(int argc, char** argv)
             config.story_path = optarg;
             break;
         case 'm': // --smart
-            if (config.story_type == StoryType::HTML)
-                throw std::invalid_argument(
-                    "incompatble options: `--smart` and `--html`");
             config.story_type = StoryType::Smart;
-            config.story_arg = optarg;
-            break;
-        case 'h': // --html
-            if (config.story_type == StoryType::Smart)
-                throw std::invalid_argument(
-                    "incompatible options: `--smart` and `--html`");
-            config.story_type = StoryType::HTML;
             config.story_arg = optarg;
             break;
         default:
